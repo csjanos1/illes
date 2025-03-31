@@ -59,6 +59,16 @@ function mutatMind(c_: number = 0) {
     strip.show()
 }
 
+function villog(n_:number, c_:number=0){
+    let i = 0
+    for (i = 1; i <= n_; i++) {
+        mutatMind(c_);
+        basic.pause(200)
+        mutatMind(1-c_);
+        basic.pause(200)
+    }
+}
+
 function fut(c_: number) {
     let i = 0
     for (i = 1; i <= 5; i++) {
@@ -103,6 +113,8 @@ basic.forever(function on_forever() {
     mutatMind(1)
     basic.pause(1000)
     mutatMind()
+    basic.pause(1000)
+    villog(5,1)
     basic.pause(1000)
     fut_(1)
     basic.pause(1000)
