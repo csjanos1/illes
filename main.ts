@@ -1,15 +1,28 @@
 function mutat(x_: number, y_: number, c_: number = 0) {
-    let y = 0
+    /*let y = 0
     let x = 0
-    let l = 0
-    let c = 0
+    let lap = 0
     x = x_ - 1
     y = y_ - 1
-    l = x >= 8 ? 64 : 0
+    lap = x >= 8 ? 64 : 0
+    x = x >= 8 ? x - 8 : x
+    x = y % 2 == 0 ? x : 7 - x*/
+    let c = 0
+    c = c_ == 1 ? sarga : (c_ == 2 ? piros : (c_==3 ? kek : fekete))
+    //strip.setPixelColor(lap + y * 8 + x, c) 
+    strip.setPixelColor(seq(x_,y_), c)
+}
+
+function seq(x_: number, y_: number){
+    let x=0
+    let y=0
+    let lap=0
+    x = x_ - 1
+    y = y_ - 1
+    lap = x >= 8 ? 64 : 0
     x = x >= 8 ? x - 8 : x
     x = y % 2 == 0 ? x : 7 - x
-    c = c_ == 1 ? sarga : (c_ == 2 ? piros : (c_==3 ? kek : fekete))
-    strip.setPixelColor(l + y * 8 + x, c) //neopixel.rgb(maxlit, 0, 0))
+    return y*8 + x + lap
 }
 
 function mutat_(n_: number = 0, c_: number = 0) {
