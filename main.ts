@@ -59,12 +59,12 @@ function mutatMind(c_: number = 0) {
     strip.show()
 }
 
-function villog(n_:number, c_:number=0){
+function villog(n_:number){
     let i = 0
     for (i = 1; i <= n_; i++) {
-        mutatMind(c_);
+        mutatMind(1);
         basic.pause(200)
-        mutatMind(1-c_);
+        mutatMind(0);
         basic.pause(200)
     }
 }
@@ -102,19 +102,11 @@ strip = neopixel.create(DigitalPin.P1, no_of_LEDs, NeoPixelMode.RGB)
 mutat_()//0,2)
 
 basic.forever(function on_forever() {
-    let i = 0
-    i = 1
-    /*while (i <= 16) {
-        mutat(i, 1, 2)
-        mutat(i, 8, 2)
-        //mutat(i, 2)
-        i += 1
-    }*/
     mutatMind(1)
     basic.pause(1000)
     mutatMind()
     basic.pause(1000)
-    villog(5,1)
+    villog(3)
     basic.pause(1000)
     fut_(1)
     basic.pause(1000)
@@ -124,17 +116,4 @@ basic.forever(function on_forever() {
     basic.pause(1000)
     fut(0)
     basic.pause(1000)
-    //fut(0, 1)
-    //basic.pause(2000)
-    /*mutat1(1)
-    mutat2(1)
-    mutat3(1)
-    mutat4(1)
-    mutat5(1)
-    basic.pause(1000)
-    mutat1(0)
-    basic.pause(200)
-    mutat1(1)
-    basic.pause(200)*/
-
 })
